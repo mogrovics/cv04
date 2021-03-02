@@ -23,5 +23,11 @@ namespace cv04
             
             return testString.Split(separator, StringSplitOptions.RemoveEmptyEntries).Length;
         }
+
+        public int LineCount()
+        {
+            char newLineChar = '\n';
+            return testString.Split(newLineChar).Length;
+        }
     }
 }

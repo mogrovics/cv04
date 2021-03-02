@@ -18,7 +18,11 @@ namespace cv04
 
             StringStatistics test = new StringStatistics(testovaciText);
 
-            Console.WriteLine(test.WordCount());
+            Console.WriteLine(testovaciText);
+
+            Console.WriteLine("\nWords: {0, 6}", test.WordCount());
+            Console.WriteLine("Lines: {0, 6}\n", test.LineCount());
+
             Console.ReadLine();
         }
     }
