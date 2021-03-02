@@ -12,7 +12,7 @@ namespace cv04
         {
             string testovaciText = "Toto je retezec predstavovany nekolika radky,\n"
                 + "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
-                + "Je tu i nejaky ten vykricnikhhhh! Pro ucely testovani i otaznik?\n"
+                + "Je tu i nejaky ten vykricnik! Pro ucely testovani i otaznik?\n"
                 + "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
                 + "posledni veta!";
 
@@ -20,10 +20,10 @@ namespace cv04
 
             Console.WriteLine(testovaciText);
 
-            Console.WriteLine("\nWords: {0, 6}", test.WordCount());
-            Console.WriteLine("Lines: {0, 6}", test.LineCount());
-            Console.WriteLine("Sentences: {0, 2}", test.SentenceCount());
-            Console.WriteLine("Longest words: {0, 1}", test.LongestToString());
+            Console.WriteLine("\nWords: {0, 10}", test.WordCount());
+            Console.WriteLine("Lines: {0, 10}", test.LineCount());
+            Console.WriteLine("Sentences: {0, 6}", test.SentenceCount());
+            Console.WriteLine("Longest words: {0, 2}", test.LongestToString());
 
             Console.ReadLine();
         }

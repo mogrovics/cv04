@@ -56,22 +56,25 @@ namespace cv04
             return counter;
         }
 
-        //
+        //method to determine longest words in string
         public string[] LongestWord()
         {
             char[] separator = { ' ', '.', ',', '!', '?', '\n' };
             string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
-            string[] longest = { };
 
+            //sort by lenght (asc)
             Array.Sort(words, (s1, s2) => s1.Length.CompareTo(s2.Length));
+            //reverse (dsc)
             Array.Reverse(words);
 
             int maxLenght = words[0].Length;
+            //remove all elements with lenght neq maxlenght
             words = words.Where(word => word.Length == maxLenght).ToArray();
 
             return words;
         }
 
+        //method to make array printable
         public string LongestToString()
         {
             string[] words = LongestWord();
