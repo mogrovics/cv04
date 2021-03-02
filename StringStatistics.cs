@@ -59,7 +59,7 @@ namespace cv04
         //method to determine longest words in string
         public string[] LongestWord()
         {
-            char[] separator = { ' ', '.', ',', '!', '?', '\n' };
+            char[] separator = { ' ', '.', ',', '!', '?', '(', ')', '\n' };
             string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
             //sort by lenght (asc)
@@ -87,9 +87,41 @@ namespace cv04
                 else
                     printable += words[i];
             }
-            
+
             return printable;
         }
 
+        //method to determine shortest words in string
+        public string[] ShortestWord()
+        {
+            char[] separator = { ' ', '.', ',', '!', '?', '(', ')', '\n' };
+            string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+            //sort by lenght (asc)
+            Array.Sort(words, (s1, s2) => s1.Length.CompareTo(s2.Length));
+
+            int minLenght = words[0].Length;
+            //remove all elements with lenght neq minlenght
+            words = words.Where(word => word.Length == minLenght).ToArray();
+
+            return words;
+        }
+
+        //method to make array printable
+        public string ShortestToString()
+        {
+            string[] words = ShortestWord();
+            string printable = "";
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (i != words.Length - 1)
+                    printable += words[i] + ", ";
+                else
+                    printable += words[i];
+            }
+
+            return printable;
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace cv04
             Console.WriteLine("Lines: {0, 10}", test.LineCount());
             Console.WriteLine("Sentences: {0, 6}", test.SentenceCount());
             Console.WriteLine("Longest words: {0, 2}", test.LongestToString());
+            Console.WriteLine("Longest words: {0, 2}", test.ShortestToString());
 
             Console.ReadLine();
         }
