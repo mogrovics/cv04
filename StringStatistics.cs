@@ -15,5 +15,13 @@ namespace cv04
         {
             this.testString = testString;
         }
+
+        //method to determine word count in a string using common separators
+        public int WordCount()
+        {
+            char[] separator = {' ', '.', ',', '!', '?', '\n'};
+            
+            return testString.Split(separator, StringSplitOptions.RemoveEmptyEntries).Length;
+        }
     }
 }
