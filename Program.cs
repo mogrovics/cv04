@@ -21,7 +21,8 @@ namespace cv04
             Console.WriteLine(testovaciText);
 
             Console.WriteLine("\nWords: {0, 6}", test.WordCount());
-            Console.WriteLine("Lines: {0, 6}\n", test.LineCount());
+            Console.WriteLine("Lines: {0, 6}", test.LineCount());
+            Console.WriteLine("Sentences: {0, 2}", test.SentenceCount());
 
             Console.ReadLine();
         }
