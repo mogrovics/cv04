@@ -55,5 +55,38 @@ namespace cv04
             }
             return counter;
         }
+
+        //
+        public string[] LongestWord()
+        {
+            char[] separator = { ' ', '.', ',', '!', '?', '\n' };
+            string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] longest = { };
+
+            Array.Sort(words, (s1, s2) => s1.Length.CompareTo(s2.Length));
+            Array.Reverse(words);
+
+            int maxLenght = words[0].Length;
+            words = words.Where(word => word.Length == maxLenght).ToArray();
+
+            return words;
+        }
+
+        public string LongestToString()
+        {
+            string[] words = LongestWord();
+            string printable = "";
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (i != words.Length - 1)
+                    printable += words[i] + ", ";
+                else
+                    printable += words[i];
+            }
+            
+            return printable;
+        }
+
     }
 }
