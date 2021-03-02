@@ -22,10 +22,12 @@ namespace cv04
 
             Console.WriteLine("\nWords: {0, 10}", test.WordCount());
             Console.WriteLine("Lines: {0, 10}", test.LineCount());
-            Console.WriteLine("Sentences: {0, 6}", test.SentenceCount());
-            Console.WriteLine("Longest words: {0, 2}", test.LongestToString());
-            Console.WriteLine("Shortest words: {0, 2}", test.ShortestToString());
-            Console.WriteLine("Most common word: {0, 2}", test.OccuranceToString());
+            Console.WriteLine("Sentences: {0, 6}\n", test.SentenceCount());
+            
+            Console.WriteLine("Longest words: {0}", test.LongestToString());
+            Console.WriteLine("Shortest words: {0}", test.ShortestToString());
+            Console.WriteLine("Most common word: {0}", test.OccuranceToString());
+            Console.WriteLine("Words alphabetically: {0}", test.SortedToString());
             Console.ReadLine();
         }
     }

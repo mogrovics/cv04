@@ -178,5 +178,33 @@ namespace cv04
 
             return printable;
         }
+
+        //method to sort a string alphabetically
+        public string[] AlphabetSort()
+        {
+            char[] separator = { ' ', '.', ',', '!', '?', '(', ')', '\n' };
+            string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+
+            Array.Sort(words);
+
+            return words;
+        }
+
+        //method to make array printable
+        public string SortedToString()
+        {
+            string[] words = AlphabetSort();
+            string printable = "";
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (i != words.Length - 1)
+                    printable += words[i] + ", ";
+                else
+                    printable += words[i];
+            }
+
+            return printable;
+        }
     }
 }
