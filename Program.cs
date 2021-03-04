@@ -20,7 +20,8 @@ namespace cv04
 
             Console.WriteLine(testovaciText);
 
-            Console.WriteLine("\nWords: {0, 10}", test.WordCount());
+            Console.WriteLine("\nIs infected: {0}", test.IsInfected());
+            Console.WriteLine("Words: {0, 10}", test.WordCount());
             Console.WriteLine("Lines: {0, 10}", test.LineCount());
             Console.WriteLine("Sentences: {0, 6}\n", test.SentenceCount());
             

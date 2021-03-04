@@ -16,6 +16,16 @@ namespace cv04
             this.testString = testString;
         }
 
+        public bool IsInfected()
+        {
+            bool checker = false;
+
+            if (testString.Contains("covid") || testString.Contains("covid-19") || testString.Contains("sars-cov-2"))
+                checker = true;
+            
+            return checker;
+        }
+        
         //method to determine word count in a string using common separators
         public int WordCount()
         {
@@ -62,13 +72,13 @@ namespace cv04
             char[] separator = { ' ', '.', ',', '!', '?', '(', ')', '\n' };
             string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
-            //sort by lenght (asc)
+            //sort by length (asc)
             Array.Sort(words, (s1, s2) => s1.Length.CompareTo(s2.Length));
             //reverse (dsc)
             Array.Reverse(words);
 
             int maxLenght = words[0].Length;
-            //remove all elements with lenght neq maxlenght
+            //remove all elements with length neq maxlength
             words = words.Where(word => word.Length == maxLenght).ToArray();
 
             return words;
@@ -97,11 +107,11 @@ namespace cv04
             char[] separator = { ' ', '.', ',', '!', '?', '(', ')', '\n' };
             string[] words = testString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
-            //sort by lenght (asc)
+            //sort by length (asc)
             Array.Sort(words, (s1, s2) => s1.Length.CompareTo(s2.Length));
 
             int minLenght = words[0].Length;
-            //remove all elements with lenght neq minlenght
+            //remove all elements with length neq minlength
             words = words.Where(word => word.Length == minLenght).ToArray();
 
             return words;
